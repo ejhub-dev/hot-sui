@@ -1,5 +1,4 @@
-
-        // Fire and Water Particle Animation
+ // Fire and Water Particle Animation
         function createParticle() {
             const particle = document.createElement('div');
             const isFireParticle = Math.random() > 0.5;
@@ -78,7 +77,30 @@
             console.log('Wallet connection initiated');
         }
 
+        // Loading Screen Functionality
+        function hideLoadingScreen() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.classList.add('hidden');
+            
+            // Remove loading screen from DOM after transition
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 800);
+        }
+
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             console.log('#HOT SUI - Where Fire Meets Water in DeFi');
+            
+            // Hide loading screen after 2 seconds
+            setTimeout(() => {
+                hideLoadingScreen();
+            }, 2000);
+        });
+
+        // Also hide loading screen when window is fully loaded
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                hideLoadingScreen();
+            }, 500);
         });
